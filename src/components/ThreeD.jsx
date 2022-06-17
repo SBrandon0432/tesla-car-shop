@@ -1,15 +1,9 @@
 import React, {useRef, useEffect} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree } from 'react-three-fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import * as THREE from 'three';
 extend({OrbitControls});
 
-// declare global {
-//   namespace JSX {
-//     interface IntrinsicElements {
-//       orbitControls: ReactThreeFiber.Object3DNode<OrbitControls, typeof OrbitControls>
-//     }
-//   }
-// }
 
 const Controls = () => {
   const {
@@ -31,9 +25,9 @@ const Box = (props) => {
 
   return (
     <mesh ref={ref} {...props}>
-    <boxBufferGeometry/>
-    <meshBasicMaterial color='blue'/>
-  </mesh>
+      <boxBufferGeometry/>
+      <meshBasicMaterial color='blue'/>
+    </mesh>
   )
 }
 
@@ -45,15 +39,15 @@ const ThreeD = () => {
       camera={{position:[3,3,3]}}
     >
 
-     <Box position={[1,1,0]}/>
-     <axesHelper args={[5]}/>
      <Controls/>
-      <points>
-        <geometry>
-
-        </geometry>
-      </points>
-
+     <axesHelper args={[5]}/>
+     <Box position={[1,1,0]}/>
+      <mesh>
+        <meshBasicMaterial side={THREE.FrontSide}/>
+        <coneGeometry>
+          <vector3 attachArray='vertices'/>
+        </coneGeometry>
+      </mesh>
     </Canvas>
   )
 }
