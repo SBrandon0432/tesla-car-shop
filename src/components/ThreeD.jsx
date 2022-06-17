@@ -24,11 +24,11 @@ const Box = () => {
 const Controls = () => {
   const {
     camera,
-    gl: { domElement },
+    gl
   } = useThree();
-  const controls = useRef();
-  useFrame((state) => controls.current.update());
-  return <orbitControls ref={controls} args={[camera, domElement]} />;
+  // const controls = useRef();
+  // useFrame((state) => controls.current.update());
+  return <orbitControls  args={[camera, gl.domElement]} />; // was the capital of Orbit vs orbit
 }
 
 const ThreeD = () => {
