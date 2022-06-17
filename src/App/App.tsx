@@ -1,13 +1,15 @@
 import React from 'react';
-import * as THREE from 'three';
-
+import { Canvas } from 'react-three-fiber'
+import ThreeD from '../components/ThreeD';
 
 
 function App() {
 
 
   return (
-    null
+    <div className='App'>
+      <ThreeD />
+    </div>
   );
 
 }
