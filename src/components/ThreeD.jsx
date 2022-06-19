@@ -47,7 +47,8 @@ const Floor = (props) => {
 const Bulb = (props) => {
 
   return (
-    <mesh>
+    <mesh {...props}>
+      <pointLight/>
       <sphereBufferGeometry/>
       <meshPhongMaterial emissive={'yellow'}/>
     </mesh>
@@ -62,9 +63,7 @@ const ThreeD = () => {
     >
 
       <ambientLight intensity={0.5}/>
-
-      <pointLight />
-      <Bulb/>
+      <Bulb position={[0, 3, 0]}/>
       <Controls/>
       <axesHelper args={[5]}/>
       <Box position={[1,2,0]}/>
