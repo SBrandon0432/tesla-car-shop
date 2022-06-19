@@ -24,7 +24,7 @@ const Box = (props) => {
   })
 
   return (
-    <mesh ref={ref} {...props}>
+    <mesh ref={ref} {...props} castShadow receiveShadow>
       <boxBufferGeometry/>
       <meshBasicMaterial color='blue'/>
     </mesh>
@@ -34,9 +34,8 @@ const Box = (props) => {
 const Floor = (props) => {
 
 
-
   return (
-    <mesh {...props}>
+    <mesh {...props} receiveShadow>
       <boxBufferGeometry args={[20,1,10]}/>
       <meshPhysicalMaterial/>
     </mesh>
@@ -48,8 +47,8 @@ const Bulb = (props) => {
 
   return (
     <mesh {...props}>
-      <pointLight/>
-      <sphereBufferGeometry/>
+      <pointLight castShadow/>
+      <sphereBufferGeometry args={[0.2]}/>
       <meshPhongMaterial emissive={'yellow'}/>
     </mesh>
   )
@@ -59,6 +58,7 @@ const ThreeD = () => {
 
   return (
     <Canvas className="ThreeD"
+      shadows
       camera={{position:[3,3,3]}}
     >
 
