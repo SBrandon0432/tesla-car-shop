@@ -60,7 +60,7 @@ const ThreeD = () => {
       shadows
       camera={{position:[1,5,1]}}
     >
-      <fog attach='fog'args={['white', 1, 10 ]}/>
+
       <ambientLight intensity={0.5}/>
       <Bulb position={[0, 3, 0]}/>
       <Controls/>
