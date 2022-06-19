@@ -18,7 +18,7 @@ const Controls = () => {
 const Box = (props) => {
   const ref = useRef();
   useFrame(state => {
-    ref.current.rotation.x += 0.01
+    // ref.current.rotation.x += 0.01
     ref.current.rotation.y += 0.01
 
   })
@@ -32,7 +32,6 @@ const Box = (props) => {
 }
 
 const Floor = (props) => {
-
 
   return (
     <mesh {...props} receiveShadow>
@@ -49,7 +48,7 @@ const Bulb = (props) => {
     <mesh {...props}>
       <pointLight castShadow/>
       <sphereBufferGeometry args={[0.2]}/>
-      <meshPhongMaterial emissive={'yellow'}/>
+      <meshPhongMaterial emissive={'red'}/>
     </mesh>
   )
 }
@@ -59,14 +58,14 @@ const ThreeD = () => {
   return (
     <Canvas className="ThreeD"
       shadows
-      camera={{position:[3,3,3]}}
+      camera={{position:[1,5,1]}}
     >
-
+      <fog attach='fog'args={['white', 1,2 ]}/>
       <ambientLight intensity={0.5}/>
       <Bulb position={[0, 3, 0]}/>
       <Controls/>
       <axesHelper args={[5]}/>
-      <Box position={[1,2,0]}/>
+      <Box position={[0,1,0]}/>
       <Floor position={[0,-.5,0]}/>
     </Canvas>
   )
