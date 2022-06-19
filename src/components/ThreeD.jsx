@@ -31,6 +31,17 @@ const Box = (props) => {
   )
 }
 
+const Floor = (props) => {
+
+
+
+  return (
+    <mesh {...props}>
+      <boxBufferGeometry args={[20,1,10]}/>
+      <meshPhysicalMaterial/>
+    </mesh>
+  )
+}
 
 const ThreeD = () => {
 
@@ -39,15 +50,11 @@ const ThreeD = () => {
       camera={{position:[3,3,3]}}
     >
 
-     <Controls/>
-     <axesHelper args={[5]}/>
-     <Box position={[1,1,0]}/>
-      <mesh>
-        <meshBasicMaterial side={THREE.FrontSide}/>
-        <coneGeometry>
-          <vector3 attachArray='vertices'/>
-        </coneGeometry>
-      </mesh>
+      <ambientLight intensity={0.5}/>
+      <Controls/>
+      <axesHelper args={[5]}/>
+      <Box position={[1,2,0]}/>
+      <Floor position={[0,-.5,0]}/>
     </Canvas>
   )
 }
