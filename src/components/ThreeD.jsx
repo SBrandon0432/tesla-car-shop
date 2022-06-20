@@ -30,8 +30,9 @@ const Box = (props) => {
       color='blue'
       opacity={0.7}
       // transparent
-      metalness={1}
+      // metalness={1}
       roughness={0}
+      clearcoat={1}
       />
     </mesh>
   )
