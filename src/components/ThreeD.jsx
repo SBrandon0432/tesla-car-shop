@@ -70,7 +70,6 @@ const Background = (props) => {
   texture.encoding = THREE.sRGBEncoding;
   texture.mapping = THREE.EquirectangularReflectionMapping;
 
-  // console.log(formatted)
   return (
     <primitive attach='background' object={texture}/>
   )
