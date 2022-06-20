@@ -1,9 +1,9 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, Suspense} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import wood from '../Assets/wood.jpg';
 import * as THREE from 'three';
 extend({OrbitControls});
-
 
 const Controls = () => {
   const {
@@ -17,6 +17,7 @@ const Controls = () => {
 
 const Box = (props) => {
   const ref = useRef();
+  const texture = useLoader(THREE.TextureLoader, wood);
   useFrame(state => {
     ref.current.rotation.x += 0.01
     ref.current.rotation.y += 0.01
@@ -27,14 +28,7 @@ const Box = (props) => {
     <mesh ref={ref} {...props} castShadow>
       <boxBufferGeometry/>
       <meshPhysicalMaterial
-        color='blue'
-        transparent={true}
-        opacity={0.7}
-        roughness={0}
-        clearcoat={1}
-        transmission={0.5}
-        reflectivity={1}
-        side={THREE.DoubleSide}
+        map={texture}
       />
     </mesh>
   )
@@ -74,7 +68,9 @@ const ThreeD = () => {
       <Bulb position={[0, 3, 0]}/>
       <Controls/>
       <axesHelper args={[5]}/>
-      <Box position={[0,1,0]}/>
+      <Suspense fallback={null}>
+        <Box position={[0,1,0]}/>
+      </Suspense>
       <Floor position={[0,-.5,0]}/>
     </Canvas>
   )
