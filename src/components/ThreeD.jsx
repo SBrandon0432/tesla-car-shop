@@ -29,9 +29,10 @@ const Box = (props) => {
       <meshPhysicalMaterial
         color='blue'
         transparent={true}
+        opacity={0.7}
         roughness={0}
         clearcoat={1}
-        transmission={1}
+        transmission={0.5}
         reflectivity={1}
         side={THREE.DoubleSide}
       />
