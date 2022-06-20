@@ -26,11 +26,12 @@ const Box = (props) => {
   return (
     <mesh ref={ref} {...props} castShadow receiveShadow>
       <boxBufferGeometry/>
-      <meshBasicMaterial
+      <meshPhysicalMaterial
       color='blue'
       opacity={0.7}
-      transparent
-      wireframe
+      // transparent
+      metalness={1}
+      roughness={0}
       />
     </mesh>
   )
