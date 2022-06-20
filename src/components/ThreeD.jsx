@@ -29,6 +29,9 @@ const Box = (props) => {
       <boxBufferGeometry/>
       <meshPhysicalMaterial
         map={texture}
+        metalness={0}
+        reflectivity={1}
+        clearcoat={1}
       />
     </mesh>
   )
