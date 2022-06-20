@@ -33,7 +33,8 @@ const Box = (props) => {
       // metalness={1}
       roughness={0}
       clearcoat={1}
-      transmission={1}
+      transmission={0.7}
+      reflectivity={1}
       />
     </mesh>
   )
