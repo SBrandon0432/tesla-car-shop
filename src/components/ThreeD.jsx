@@ -2,6 +2,7 @@ import React, {useRef, useEffect, Suspense} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import wood from '../Assets/wood.jpg';
+import sky from '../Assets/sky.jpg'
 import * as THREE from 'three';
 extend({OrbitControls});
 
@@ -60,6 +61,15 @@ const Bulb = (props) => {
   )
 }
 
+
+const Background = (props) => {
+  const texture = useLoader(THREE.TextureLoader, sky);
+  return (
+    <primitive attach='background' object={texture}/>
+  )
+
+}
+
 const ThreeD = () => {
 
   return (
@@ -74,6 +84,9 @@ const ThreeD = () => {
       <axesHelper args={[5]}/>
       <Suspense fallback={null}>
         <Box position={[0,1,0]}/>
+      </Suspense>
+      <Suspense fallback={null}>
+        <Background/>
       </Suspense>
       <Floor position={[0,-.5,0]}/>
     </Canvas>
