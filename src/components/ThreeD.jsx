@@ -26,7 +26,12 @@ const Box = (props) => {
   return (
     <mesh ref={ref} {...props} castShadow receiveShadow>
       <boxBufferGeometry/>
-      <meshBasicMaterial color='blue'/>
+      <meshBasicMaterial
+      color='blue'
+      opacity={0.7}
+      transparent
+      // visible={true}
+      />
     </mesh>
   )
 }
