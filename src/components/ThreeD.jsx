@@ -26,7 +26,8 @@ const Box = (props) => {
 
   return (
     <mesh ref={ref} {...props} castShadow>
-      <boxBufferGeometry/>
+      {/* <boxBufferGeometry/> */}
+      <sphereBufferGeometry args={[1,100,100]}/>
       <meshPhysicalMaterial
         map={texture}
         metalness={0}
