@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from "react";
-import { ReactThreeFiber, Canvas, useFrame, extend, useThree } from 'react-three-fiber';
+import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
 extend({OrbitControls});
@@ -18,23 +18,22 @@ const Controls = () => {
 const Box = (props) => {
   const ref = useRef();
   useFrame(state => {
-    // ref.current.rotation.x += 0.01
+    ref.current.rotation.x += 0.01
     ref.current.rotation.y += 0.01
 
   })
 
   return (
-    <mesh ref={ref} {...props} castShadow receiveShadow>
+    <mesh ref={ref} {...props} castShadow>
       <boxBufferGeometry/>
       <meshPhysicalMaterial
-      color='blue'
-      opacity={1}
-      transparent
-      // metalness={1}
-      roughness={0}
-      clearcoat={1}
-      transmission={0.7}
-      reflectivity={1}
+        color='blue'
+        transparent={true}
+        roughness={0}
+        clearcoat={1}
+        transmission={1}
+        reflectivity={1}
+        side={THREE.DoubleSide}
       />
     </mesh>
   )
