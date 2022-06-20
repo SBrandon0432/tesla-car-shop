@@ -30,7 +30,7 @@ const Box = (props) => {
       color='blue'
       opacity={0.7}
       transparent
-      // visible={true}
+      wireframe
       />
     </mesh>
   )
