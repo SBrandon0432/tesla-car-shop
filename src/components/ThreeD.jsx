@@ -65,8 +65,12 @@ const Bulb = (props) => {
 const Background = (props) => {
   const {gl} = useThree();
   const texture = useLoader(THREE.TextureLoader, shop);
-  const formatted = new THREE.WebGLCubeRenderTarget(texture.image.height).fromEquirectangularTexture(gl, texture);
+  // const formatted = new THREE.WebGLCubeRenderTarget(texture.image.height).fromEquirectangularTexture(gl , texture);  does not work idk why
 
+  texture.encoding = THREE.sRGBEncoding;
+  texture.mapping = THREE.EquirectangularReflectionMapping;
+
+  // console.log(formatted)
   return (
     <primitive attach='background' object={texture}/>
   )
@@ -95,6 +99,7 @@ const ThreeD = () => {
       </Suspense>
 
       <Floor position={[0,-.5,0]}/>
+
     </Canvas>
   )
 }
