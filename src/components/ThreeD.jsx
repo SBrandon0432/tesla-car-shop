@@ -28,11 +28,12 @@ const Box = (props) => {
       <boxBufferGeometry/>
       <meshPhysicalMaterial
       color='blue'
-      opacity={0.7}
-      // transparent
+      opacity={1}
+      transparent
       // metalness={1}
       roughness={0}
       clearcoat={1}
+      transmission={1}
       />
     </mesh>
   )
