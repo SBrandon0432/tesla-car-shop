@@ -2,9 +2,10 @@ import React, {useRef, useEffect, Suspense} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import wood from '../Assets/wood.jpg';
-import sky from '../Assets/sky.jpg'
+import shop from '../Assets/autoshop.jpg';
 import * as THREE from 'three';
 extend({OrbitControls});
+
 
 const Controls = () => {
   const {
@@ -27,7 +28,6 @@ const Box = (props) => {
 
   return (
     <mesh ref={ref} {...props} castShadow>
-      {/* <boxBufferGeometry/> */}
       <sphereBufferGeometry args={[1,100,100]}/>
       <meshPhysicalMaterial
         map={texture}
@@ -63,7 +63,10 @@ const Bulb = (props) => {
 
 
 const Background = (props) => {
-  const texture = useLoader(THREE.TextureLoader, sky);
+  const {gl} = useThree();
+  const texture = useLoader(THREE.TextureLoader, shop);
+  const formatted = new THREE.WebGLCubeRenderTarget(texture.image.height).fromEquirectangularTexture(gl, texture);
+
   return (
     <primitive attach='background' object={texture}/>
   )
@@ -82,12 +85,15 @@ const ThreeD = () => {
       <Bulb position={[0, 3, 0]}/>
       <Controls/>
       <axesHelper args={[5]}/>
+
       <Suspense fallback={null}>
         <Box position={[0,1,0]}/>
       </Suspense>
+
       <Suspense fallback={null}>
         <Background/>
       </Suspense>
+
       <Floor position={[0,-.5,0]}/>
     </Canvas>
   )
