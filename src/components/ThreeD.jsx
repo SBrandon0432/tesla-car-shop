@@ -117,7 +117,11 @@ const ThreeD = () => {
       <axesHelper args={[5]}/>
 
       <Suspense fallback={null}>
-        <Box position={[0,1,0]}/>
+        <Box position={[4,2,0]}/>
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <Box position={[-5,2,0]}/>
       </Suspense>
 
       <Suspense fallback={null}>
