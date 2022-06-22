@@ -4,6 +4,8 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import wood from '../Assets/wood.jpg';
 import shop from '../Assets/autoshop.jpg';
 import * as THREE from 'three';
+import Model from './Model';
+
 extend({OrbitControls});
 
 
@@ -84,7 +86,6 @@ const Floor = (props) => {
   )
 }
 
-
 const Bulb = (props) => {
 
   return (
@@ -95,7 +96,6 @@ const Bulb = (props) => {
     </mesh>
   )
 }
-
 
 const Background = (props) => {
   const {gl} = useThree();
@@ -113,6 +113,8 @@ const Background = (props) => {
 
 const ThreeD = () => {
 
+
+
   return (
     <Canvas className="ThreeD"
       shadows
@@ -121,6 +123,12 @@ const ThreeD = () => {
 
       <ambientLight intensity={0.5}/>
       <Bulb position={[0, 3, 0]}/>
+
+      <Suspense fallback={null}>
+        <Model />
+      </Suspense>
+
+
       <Controls/>
       <axesHelper args={[5]}/>
 
