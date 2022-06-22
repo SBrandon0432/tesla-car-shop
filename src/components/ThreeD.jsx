@@ -18,8 +18,8 @@ const Controls = () => {
 }
 
 const handlePointerDown = (e) => {
-
-
+  e.object.active = true
+  window.activeMEsh = e.object;
 }
 
 const handlePointerEnter = (e) => {
@@ -27,12 +27,13 @@ const handlePointerEnter = (e) => {
   e.object.scale.y = 1.5
   e.object.scale.z = 1.5
 
-
 }
 const handlePointerLeave = (e) => {
-  e.object.scale.x = 1
-  e.object.scale.y = 1
-  e.object.scale.z = 1
+  if (!e.object.active) {
+    e.object.scale.x = 1
+    e.object.scale.y = 1
+    e.object.scale.z = 1
+  }
 
 }
 
