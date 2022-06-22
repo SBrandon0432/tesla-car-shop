@@ -17,6 +17,25 @@ const Controls = () => {
   return < orbitControls ref={controls} args={[camera, gl.domElement]} />; // was the capital of Orbit vs orbit
 }
 
+const handlePointerDown = (e) => {
+
+
+}
+
+const handlePointerEnter = (e) => {
+  e.object.scale.x = 1.5
+  e.object.scale.y = 1.5
+  e.object.scale.z = 1.5
+
+
+}
+const handlePointerLeave = (e) => {
+  e.object.scale.x = 1
+  e.object.scale.y = 1
+  e.object.scale.z = 1
+
+}
+
 const Box = (props) => {
   const ref = useRef();
   const texture = useLoader(THREE.TextureLoader, wood);
@@ -27,8 +46,15 @@ const Box = (props) => {
   })
 
   return (
-    <mesh ref={ref} {...props} castShadow>
-      <sphereBufferGeometry args={[1,100,100]}/>
+    <mesh ref={ref} {...props}
+      castShadow
+      onPointerDown={handlePointerDown}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
+
+
+      >
+      <boxBufferGeometry/>
       <meshPhysicalMaterial
         map={texture}
         metalness={0}
