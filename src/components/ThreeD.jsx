@@ -6,8 +6,7 @@ import Background from "./Background";
 import Bulb from "./Bulb";
 import Controls from "./Controls";
 import Floor from "./Floor";
-// const Model = lazy(() => import("./Model"));
-import Model from "./Model";
+const Model = lazy(() => import("./Model"));
 
 
 const ThreeD = () => {
