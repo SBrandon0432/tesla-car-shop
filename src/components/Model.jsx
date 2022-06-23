@@ -1,22 +1,24 @@
 import React, {lazy} from 'react';
-import { useLoader } from 'react-three-fiber';
+import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-// import car from './scene.gltf'
-
-// const car = lazy(() => import("./scene.gltf"));
+import {useFLTF} from '@react-three/drei';
 
 const Model = props =>{
 
 
-  // const model = useLoader(
-  //   GLTFLoader, './tesla_model_3/scene.gltf'
-  // )
+  const model = useLoader(
+    GLTFLoader, props.path
+  )
 
-  // console.log(model.scene)
-  // return (
-  //  <primitive object={model.scene}/>
-  // )
+  // const model = useGLTF('/scene.gltf')
+  // const { nodes, materials } = useGLTF("/scene.gltf");
+
+  // console.log(model)
+  return (
+   <primitive object={model.scene} scale={'.50'} position={[0,0,0]}/>
+    // null
+  )
 
 }
 

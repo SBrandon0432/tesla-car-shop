@@ -1,10 +1,12 @@
-import React, {useRef, useEffect, Suspense} from "react";
+import React, {useRef, useEffect, Suspense, lazy} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import wood from '../Assets/wood.jpg';
 import shop from '../Assets/autoshop.jpg';
 import * as THREE from 'three';
-import Model from './Model';
+// import Model from './Model';
+const Model = lazy(() => import("./Model"));
+
 
 extend({OrbitControls});
 
@@ -118,16 +120,15 @@ const ThreeD = () => {
   return (
     <Canvas className="ThreeD"
       shadows
-      camera={{position:[1,5,1]}}
+      camera={{position:[200,200,200]}}
     >
 
       <ambientLight intensity={0.5}/>
       <Bulb position={[0, 3, 0]}/>
 
       <Suspense fallback={null}>
-        <Model />
+        <Model args={[10,10,10]} path={'/tesla_model_3/scene.gltf'}/>
       </Suspense>
-
 
       <Controls/>
       <axesHelper args={[5]}/>
