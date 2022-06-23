@@ -5,22 +5,11 @@ import Box from './Box';
 import Background from "./Background";
 import Bulb from "./Bulb";
 import Controls from "./Controls";
+import Floor from "./Floor";
 const Model = lazy(() => import("./Model"));
 
 
-
-const Floor = (props) => {
-
-  return (
-    <mesh {...props} receiveShadow>
-      <boxBufferGeometry args={[20,1,10]}/>
-      <meshPhysicalMaterial/>
-    </mesh>
-  )
-}
-
 const ThreeD = () => {
-
 
   return (
     <Canvas className="ThreeD"
@@ -28,7 +17,7 @@ const ThreeD = () => {
       camera={{position:[200,200,200]}}
     >
 
-      <ambientLight intensity={0.5}/>
+      <ambientLight intensity={1.5}/>
       <Bulb position={[0, 3, 0]}/>
 
       <Suspense fallback={null}>
