@@ -7,7 +7,7 @@ import {useFLTF} from '@react-three/drei';
 const Model = props =>{
 
 
-  const model = useLoader(
+  const model = new useLoader(
     GLTFLoader, props.path
   )
 
