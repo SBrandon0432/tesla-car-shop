@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 const Model = props =>{
 
 
-  const model = new useLoader(
+  const model = useLoader(
     GLTFLoader, props.path
   )
     console.log(model)
