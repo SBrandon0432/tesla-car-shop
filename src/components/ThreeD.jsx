@@ -21,7 +21,10 @@ const ThreeD = () => {
       <Bulb position={[0, 3, 0]}/>
 
       <Suspense fallback={null}>
-        <Model args={[10,10,10]} path={'/tesla_model_3/scene.gltf'}/>
+        <Model
+        args={[10,10,10]}
+        path={'/tesla_model_3/scene.gltf'}
+        />
       </Suspense>
 
       <Controls/>
@@ -29,10 +32,6 @@ const ThreeD = () => {
 
       <Suspense fallback={null}>
         <Box position={[4,2,0]}/>
-      </Suspense>
-
-      <Suspense fallback={null}>
-        <Box position={[-5,2,0]}/>
       </Suspense>
 
       <Suspense fallback={null}>

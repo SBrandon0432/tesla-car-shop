@@ -6,18 +6,12 @@ import {useFLTF} from '@react-three/drei';
 
 const Model = props =>{
 
-
   const model = useLoader(
     GLTFLoader, props.path
   )
 
-  // const model = useGLTF('/scene.gltf')
-  // const { nodes, materials } = useGLTF("/scene.gltf");
-
-  // console.log(model)
   return (
    <primitive object={model.scene} scale={'.50'} position={[0,0,0]}/>
-    // null
   )
 
 }
