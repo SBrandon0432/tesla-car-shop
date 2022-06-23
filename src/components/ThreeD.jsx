@@ -23,7 +23,7 @@ const ThreeD = () => {
       <Suspense fallback={null}>
         <Model
         args={[10,10,10]}
-        path={'./tesla_model_3/scene.gltf'}
+        path={'/tesla_model_3/scene.gltf'}
         />
       </Suspense>
 
