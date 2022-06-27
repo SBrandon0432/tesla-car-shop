@@ -1,5 +1,5 @@
 import React, {useRef, useEffect, Suspense, lazy, useState} from "react";
-import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
+import { Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import Color from '../components/Color';
 import * as THREE from 'three'
 import Box from '../components/Box';
@@ -7,6 +7,7 @@ import Background from "../components/Background";
 import Bulb from "../components/Bulb";
 import Controls from "../components/Controls";
 import Floor from "../components/Floor";
+import Dragables from "../components/Dragable";
 const Model = lazy(() => import("../components/Model"));
 
 function App() {
@@ -40,13 +41,15 @@ function App() {
         <Controls/>
         <axesHelper args={[5]}/>
 
-      <Suspense fallback={null}>
-          <Box position={[4,2,0]} />
-      </Suspense>
+        <Dragables>
+          <Suspense fallback={null}>
+              <Box position={[4,2,0]} />
+          </Suspense>
 
-        <Suspense fallback={null}>
-          <Box position={[-4,2,0]}/>
-        </Suspense>
+          <Suspense fallback={null}>
+            <Box position={[-4,2,0]}/>
+          </Suspense>
+        </Dragables>
 
         <Suspense fallback={null}>
           <Background/>
