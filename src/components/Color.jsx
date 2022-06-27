@@ -3,12 +3,12 @@ import * as THREE from 'three'
 
 const Color = (props) => {
 
-  // const {handleClick} = props
+  const {handleClick} = props
 
-  const handleClick = (e) => {
-    if (!window.activeMesh) return;
-    window.activeMesh.material.color = new THREE.Color(e.target.style.Background);
-  }
+  // const handleClick = (e) => {
+  //   if (!window.activeMesh) return;
+  //   window.activeMesh.material.color = new THREE.Color(e.target.style.Background);
+  // }
 
   return (
     <div className="color">

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, Suspense, lazy} from "react";
+import React, {useRef, useEffect, Suspense, lazy, useState} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import Color from '../components/Color';
 import * as THREE from 'three'
@@ -8,18 +8,38 @@ import Bulb from "../components/Bulb";
 import Controls from "../components/Controls";
 import Floor from "../components/Floor";
 const Model = lazy(() => import("../components/Model"));
+
 function App() {
+
+
 
   const handleClick = (e) => {
     if (!window.activeMesh) return;
-    console.log('click')
-    window.activeMesh.material.color = new THREE.Color(e.target.style.Background);
+    window.activeMesh.material.color = new THREE.Color('blue');
   }
-
 
   return (
     <div className='App'>
-      <Color />
+      <div className="color">
+        <div
+        className="color__blue"
+        style={{background: 'blue'}}
+        onClick={handleClick}
+        >
+        </div>
+
+        <div
+        className="color__yellow"
+        onClick={handleClick}
+        >
+        </div>
+
+        <div
+        className="color__white"
+        onClick={handleClick}
+        >
+        </div>
+    </div>
       <Canvas className="ThreeD"
         shadows
         camera={{position:[10,10,10]}}
