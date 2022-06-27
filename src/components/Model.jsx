@@ -10,11 +10,12 @@ const Model = props =>{
     GLTFLoader, props.path
   )
 
+
   return (
     <Suspense>
       <primitive
       object={model.scene}
-      scale={'.50'}
+      scale={'.05'}
       position={[0,0,0]}
       />
     </Suspense>

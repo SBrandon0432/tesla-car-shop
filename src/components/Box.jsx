@@ -37,7 +37,6 @@ const Box = (props) => {
   useFrame(state => {
     ref.current.rotation.x += 0.01
     ref.current.rotation.y += 0.01
-
   })
 
   return (
