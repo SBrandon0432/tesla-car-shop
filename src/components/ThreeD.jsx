@@ -6,41 +6,54 @@ import Background from "./Background";
 import Bulb from "./Bulb";
 import Controls from "./Controls";
 import Floor from "./Floor";
+import Color from "./Color";
 const Model = lazy(() => import("./Model"));
 
+
+const handleClick = (e) => {
+  if (!window.activeMesh) return;
+  window.activeMesh.material.color = new THREE.Color(e.target.style.Background);
+}
 
 const ThreeD = () => {
 
   return (
-    <Canvas className="ThreeD"
-      shadows
-      camera={{position:[200,200,200]}}
-    >
+    <>
+      <Canvas className="ThreeD"
+        shadows
+        camera={{position:[200,200,200]}}
+        >
 
-      <ambientLight intensity={1.5}/>
-      <Bulb position={[0, 3, 0]}/>
+        <ambientLight intensity={1.5}/>
+        <Bulb position={[0, 3, 0]}/>
 
-      <Suspense fallback={null}>
-        <Model
-        args={[10,10,10]}
-        path={'/tesla_model_3/scene.gltf'}
-        />
-      </Suspense>
+        <Suspense fallback={null}>
+          <Model
+          args={[10,10,10]}
+          path={'/tesla_model_3/scene.gltf'}
 
-      <Controls/>
-      <axesHelper args={[5]}/>
+          />
+        </Suspense>
 
-      <Suspense fallback={null}>
-        <Box position={[4,2,0]}/>
-      </Suspense>
+        <Controls/>
+        <axesHelper args={[5]}/>
 
-      <Suspense fallback={null}>
-        <Background/>
-      </Suspense>
+        <Suspense fallback={null}>
+          <Box position={[4,2,0]}/>
+        </Suspense>
 
-      <Floor position={[0,-.5,0]}/>
+        <Suspense fallback={null}>
+          <Box position={[-4,2,0]}/>
+        </Suspense>
 
-    </Canvas>
+        <Suspense fallback={null}>
+          <Background/>
+        </Suspense>
+
+        <Floor position={[0,-.5,0]}/>
+
+      </Canvas>
+    </>
   )
 }
 

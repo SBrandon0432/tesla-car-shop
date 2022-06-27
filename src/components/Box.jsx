@@ -31,7 +31,6 @@ const scaleDown = object => {
 }
 
 
-
 const Box = (props) => {
   const ref = useRef();
   const texture = useLoader(THREE.TextureLoader, wood);
@@ -47,7 +46,6 @@ const Box = (props) => {
       onPointerDown={handlePointerDown}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
-
 
       >
       <boxBufferGeometry/>
