@@ -12,25 +12,27 @@ const Color = (props) => {
 
   return (
     <div className="color">
-        <div
-        className="color__blue"
-        style={{background: 'blue'}}
-        onClick={handleClick}
-        >
-        </div>
-
-        <div
-        className="color__yellow"
-        onClick={handleClick}
-        >
-        </div>
-
-        <div
-        className="color__white"
-        onClick={handleClick}
-        >
-        </div>
+    <div
+    className="color__blue"
+    style={{background: 'blue'}}
+    onClick={handleClick}
+    >
     </div>
+
+    <div
+    className="color__yellow"
+    style={{background: 'yellow'}}
+    onClick={handleClick}
+    >
+    </div>
+
+    <div
+    className="color__white"
+    onClick={handleClick}
+    style={{background: 'white'}}
+    >
+    </div>
+</div>
   )
 
 }

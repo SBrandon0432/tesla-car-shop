@@ -14,32 +14,14 @@ function App() {
 
 
   const handleClick = (e) => {
+    console.log(e.target.style.background)
     if (!window.activeMesh) return;
-    window.activeMesh.material.color = new THREE.Color('blue');
+    window.activeMesh.material.color = new THREE.Color(e.target.style.background);
   }
 
   return (
     <div className='App'>
-      <div className="color">
-        <div
-        className="color__blue"
-        style={{background: 'blue'}}
-        onClick={handleClick}
-        >
-        </div>
-
-        <div
-        className="color__yellow"
-        onClick={handleClick}
-        >
-        </div>
-
-        <div
-        className="color__white"
-        onClick={handleClick}
-        >
-        </div>
-    </div>
+      <Color handleClick={handleClick}/>
       <Canvas className="ThreeD"
         shadows
         camera={{position:[10,10,10]}}
