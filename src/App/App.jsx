@@ -14,7 +14,7 @@ function App() {
 
 
   const handleClick = (e) => {
-    console.log(e.target.style.background)
+    console.log(e.target.style)
     if (!window.activeMesh) return;
     window.activeMesh.material.color = new THREE.Color(e.target.style.background);
   }
