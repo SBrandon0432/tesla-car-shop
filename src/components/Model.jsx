@@ -16,7 +16,6 @@ const Model = props =>{
       object={model.scene}
       scale={'.50'}
       position={[0,0,0]}
-
       />
     </Suspense>
   )

@@ -1,6 +1,7 @@
 import React, {useRef} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import * as THREE from 'three';
+import Color from "./Color";
 import wood from '../Assets/wood.jpg';
 
 
@@ -30,7 +31,6 @@ const scaleDown = object => {
   object.scale.z = 1
 }
 
-
 const Box = (props) => {
   const ref = useRef();
   const texture = useLoader(THREE.TextureLoader, wood);
@@ -46,7 +46,6 @@ const Box = (props) => {
       onPointerDown={handlePointerDown}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
-
       >
       <boxBufferGeometry/>
       <meshPhysicalMaterial
@@ -54,7 +53,7 @@ const Box = (props) => {
         metalness={0}
         reflectivity={1}
         clearcoat={1}
-      />
+        />
     </mesh>
   )
 }

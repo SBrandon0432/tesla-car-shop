@@ -15,13 +15,14 @@ const handleClick = (e) => {
   window.activeMesh.material.color = new THREE.Color(e.target.style.Background);
 }
 
+
 const ThreeD = () => {
 
   return (
     <>
       <Canvas className="ThreeD"
         shadows
-        camera={{position:[200,200,200]}}
+        camera={{position:[10,10,10]}}
         >
 
         <ambientLight intensity={1.5}/>
@@ -31,7 +32,6 @@ const ThreeD = () => {
           <Model
           args={[10,10,10]}
           path={'/tesla_model_3/scene.gltf'}
-
           />
         </Suspense>
 
@@ -39,7 +39,7 @@ const ThreeD = () => {
         <axesHelper args={[5]}/>
 
         <Suspense fallback={null}>
-          <Box position={[4,2,0]}/>
+          <Box position={[4,2,0]} />
         </Suspense>
 
         <Suspense fallback={null}>
