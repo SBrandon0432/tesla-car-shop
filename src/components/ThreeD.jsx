@@ -38,19 +38,19 @@ const ThreeD = () => {
         <Controls/>
         <axesHelper args={[5]}/>
 
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <Box position={[4,2,0]} />
         </Suspense>
 
         <Suspense fallback={null}>
           <Box position={[-4,2,0]}/>
-        </Suspense>
+        </Suspense> */}
 
         <Suspense fallback={null}>
           <Background/>
         </Suspense>
 
-        <Floor position={[0,-.5,0]}/>
+        {/* <Floor position={[0,-.5,0]}/> */}
 
       </Canvas>
     </>
