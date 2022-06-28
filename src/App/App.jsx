@@ -30,12 +30,15 @@ function App() {
         <ambientLight intensity={1.5}/>
         <Bulb position={[0, 3, 0]}/>
 
-        {/* <Suspense fallback={null}>
+      <Dragables>
+
+        <Suspense fallback={null}>
           <Model
           args={[10,10,10]}
           path={'/tesla_model_3/scene.gltf'}
           />
-        </Suspense> */}
+        </Suspense>
+      </Dragables>
 
         <Controls />
         <axesHelper args={[5]}/>
