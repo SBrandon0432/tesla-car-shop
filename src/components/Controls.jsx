@@ -12,7 +12,10 @@ const Controls = () => {
   } = useThree();
   const controls = useRef();
   useFrame((state) => controls.current.update());
-  return < orbitControls ref={controls} args={[camera, gl.domElement]} />; // was the capital of Orbit vs orbit
+  return < orbitControls
+  attach='orbitControls'
+  ref={controls}
+  args={[camera, gl.domElement]} />; // was the capital of Orbit vs orbit
 }
 
 export default Controls;
