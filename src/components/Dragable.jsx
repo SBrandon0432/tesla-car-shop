@@ -25,6 +25,14 @@ const Dragables = (props) => {
        e => scene.orbitControls.enabled = true
     )
     controlsRef.current.addEventListener(
+      'dragstart',
+      e => e.object.api.mass.set(0)
+    )
+    controlsRef.current.addEventListener(
+      'dragend',
+       e => e.object.api.mass.set(.5)
+    )
+    controlsRef.current.addEventListener(
       'drag',
        e =>{
         e.object.api.position.copy(e.object.position)
