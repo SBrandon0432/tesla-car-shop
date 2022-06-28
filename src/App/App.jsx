@@ -33,7 +33,7 @@ function App() {
 
       <Dragables>
         <Suspense fallback={null}>
-          <Dragables>
+          <Dragables transformGroup>
             <Model
             path={'/tesla_model_3/scene.gltf'}
             scale={new Array(3).fill(0.01)}
@@ -41,7 +41,7 @@ function App() {
             />
           </Dragables>
 
-          <Dragables>
+          <Dragables transformGroup>
             <Model
             path={'/tesla_roadster_2020/scene.gltf'}
             scale={new Array(3).fill(1.36)}
