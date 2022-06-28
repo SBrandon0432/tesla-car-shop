@@ -31,21 +31,23 @@ function App() {
         <ambientLight intensity={1.5}/>
         <Bulb position={[0, 3, 0]}/>
 
-      {/* <Dragables>
+    {/* <Physics>
 
+      <Dragables>
         <Suspense fallback={null}>
           <Model
           args={[10,10,10]}
           path={'/tesla_model_3/scene.gltf'}
           />
         </Suspense>
-      </Dragables> */}
+      </Dragables>
+    </Physics> */}
 
         <Controls />
         <axesHelper args={[5]}/>
 
-        <Physics allowSleep={false} iterations={15} gravity={[0, -200, 0]}>
-            <Debug color="black" scale={1.1}>
+        <Physics allowSleep={false} iterations={15} gravity={[0, -7, 0]}>
+
               <Dragables>
 
               <Suspense fallback={null}>
@@ -58,7 +60,7 @@ function App() {
             </Suspense>
 
           <Floor position={[0,-.5,0]}/>
-          </Debug>
+
         </Physics >
 
         <Suspense fallback={null}>
