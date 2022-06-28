@@ -16,7 +16,7 @@ const Model = props =>{
 
       <primitive
       castShadows
-      {...props}
+      scale={props.scale}
       object={model.scene}
       />
 

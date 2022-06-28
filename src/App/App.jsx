@@ -37,22 +37,24 @@ function App() {
       <Dragables>
         <Suspense fallback={null}>
           <Dragables transformGroup>
-            <BoundingBox visible>
+            <BoundingBox visible position={[4,1,0]}>
             <Model
             path={'/tesla_model_3/scene.gltf'}
             scale={new Array(3).fill(0.01)}
-            position={[4,0.6,0]}
+
             />
             </BoundingBox>
           </Dragables>
 
-          <Dragables transformGroup>
-            <Model
-            path={'/tesla_roadster_2020/scene.gltf'}
-            scale={new Array(3).fill(1.36)}
-            position={[-4,0.1,-1]}
-            />
-          </Dragables>
+          <BoundingBox visible position={[-4,1,1]}>
+            <Dragables transformGroup>
+              <Model
+              path={'/tesla_roadster_2020/scene.gltf'}
+              scale={new Array(3).fill(1.36)}
+
+              />
+            </Dragables>
+            </BoundingBox>
         </Suspense>
 
       </Dragables>
