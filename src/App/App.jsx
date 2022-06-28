@@ -53,9 +53,9 @@ function App() {
               </Suspense>
               </Dragables>
 
-            {/* <Suspense fallback={null}>
+            <Suspense fallback={null}>
               <Box position={[-4,2,0]}/>
-            </Suspense> */}
+            </Suspense>
 
           <Floor position={[0,-.5,0]}/>
           </Debug>
