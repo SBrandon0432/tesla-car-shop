@@ -27,14 +27,13 @@ function App() {
         shadows
         camera={{position:[10,10,10]}}
         >
-        {/* <ambientLight intensity={1.5}/> */}
+        <ambientLight intensity={1.5}/>
 
         <Bulb position={[0, 3, 0]}/>
 
       <Dragables>
         <Suspense fallback={null}>
           <Model
-
           path={'/tesla_model_3/scene.gltf'}
           scale={new Array(3).fill(0.01)}
           position={[4,0.6,0]}
