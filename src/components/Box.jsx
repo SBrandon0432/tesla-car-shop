@@ -33,7 +33,7 @@ const scaleDown = object => {
 }
 
 const Box = (props) => {
-  const [ref, api] = useBox(()=> ({mass: 1,...props}))
+  const [ref, api] = useBox(()=> ({mass: .5,...props}))
   console.log( ref)
   // const ref = useRef();
   const texture = useLoader(THREE.TextureLoader, wood);

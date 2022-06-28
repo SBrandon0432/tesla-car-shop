@@ -26,7 +26,10 @@ const Dragables = (props) => {
     )
     controlsRef.current.addEventListener(
       'drag',
-       e => e.object.api.position.copy(e.object.position)
+       e =>{
+        e.object.api.position.copy(e.object.position)
+        e.object.api.velocity.set(0,0,0)
+       }
     )
   },[children])
 
