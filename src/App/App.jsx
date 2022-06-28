@@ -36,8 +36,15 @@ function App() {
 
       <Dragables>
         <Suspense fallback={null}>
-          <Dragables transformGroup>
-            <BoundingBox visible position={[4,1,0]}>
+          <Dragables
+            transformGroup
+            visible
+          >
+            <BoundingBox
+            visible
+            position={[4,1,-1]}
+            dims={[2.5,4,8]}
+            >
             <Model
             path={'/tesla_model_3/scene.gltf'}
             scale={new Array(3).fill(0.01)}
@@ -46,7 +53,11 @@ function App() {
             </BoundingBox>
           </Dragables>
 
-          <BoundingBox visible position={[-4,1,1]}>
+          <BoundingBox
+            visible
+            position={[-4,1,1]}
+            dims={[2.5,4,7]}
+          >
             <Dragables transformGroup>
               <Model
               path={'/tesla_roadster_2020/scene.gltf'}
@@ -65,7 +76,7 @@ function App() {
         <axesHelper args={[5]}/>
 
         <Physics allowSleep={false} iterations={15} gravity={[0, -7, 0]}>
-          <Floor position={[0,-.5,0]}/>
+          {/* <Floor position={[0,-.5,0]}/> */}
         </Physics >
 
         <Suspense fallback={null}>
