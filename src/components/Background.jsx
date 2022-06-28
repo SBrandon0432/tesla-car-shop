@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useMemo} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import * as THREE from 'three';
 import shop from '../Assets/autoshop.jpg';
@@ -11,7 +11,6 @@ const Background = (props) => {
 
   texture.encoding = THREE.sRGBEncoding;
   texture.mapping = THREE.EquirectangularReflectionMapping;
-
   return (
     <primitive attach='background' object={texture}/>
   )

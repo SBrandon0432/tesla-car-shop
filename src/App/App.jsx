@@ -1,7 +1,8 @@
 import React, {useRef, useEffect, Suspense, lazy, useState} from "react";
 import { Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
-import Color from '../components/Color';
 import * as THREE from 'three'
+import { Physics } from "@react-three/cannon";
+import Color from '../components/Color';
 import Box from '../components/Box';
 import Background from "../components/Background";
 import Bulb from "../components/Bulb";
@@ -30,7 +31,7 @@ function App() {
         <ambientLight intensity={1.5}/>
         <Bulb position={[0, 3, 0]}/>
 
-      <Dragables>
+      {/* <Dragables>
 
         <Suspense fallback={null}>
           <Model
@@ -38,26 +39,28 @@ function App() {
           path={'/tesla_model_3/scene.gltf'}
           />
         </Suspense>
-      </Dragables>
+      </Dragables> */}
 
         <Controls />
         <axesHelper args={[5]}/>
 
-        <Dragables>
-          <Suspense fallback={null}>
-              <Box position={[4,2,0]} />
-          </Suspense>
+        <Physics>
+          <Dragables>
+              <Suspense fallback={null}>
+                  <Box position={[4,2,0]} />
+              </Suspense>
 
-          <Suspense fallback={null}>
-            <Box position={[-4,2,0]}/>
-          </Suspense>
-        </Dragables>
+            <Suspense fallback={null}>
+              <Box position={[-4,2,0]}/>
+            </Suspense>
+          </Dragables>
+          <Floor position={[0,-.5,0]}/>
+        </Physics>
 
         <Suspense fallback={null}>
           <Background/>
         </Suspense>
 
-        {/* <Floor position={[0,-.5,0]}/> */}
 
       </Canvas>
     </div>
