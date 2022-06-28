@@ -44,6 +44,7 @@ const Dragables = (props) => {
   return (
     <group ref={groupRef}>
       <dragControls
+      transformGroup={props.transformGroup}
       ref={controlsRef}
       args={[children, camera, gl.domElement]}/>
       {props.children}
