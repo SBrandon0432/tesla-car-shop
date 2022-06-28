@@ -9,6 +9,7 @@ import Bulb from "../components/Bulb";
 import Controls from "../components/Controls";
 import Floor from "../components/Floor";
 import Dragables from "../components/Dragable";
+import BoundingBox from "../components/BoundingBox";
 const Model = lazy(() => import("../components/Model"));
 
 function App() {
@@ -28,17 +29,19 @@ function App() {
         camera={{position:[10,10,10]}}
         >
         <ambientLight intensity={1.5}/>
-
         <Bulb position={[0, 3, 0]}/>
+    <Physics>
 
       <Dragables>
         <Suspense fallback={null}>
           <Dragables transformGroup>
+            <BoundingBox>
             <Model
             path={'/tesla_model_3/scene.gltf'}
             scale={new Array(3).fill(0.01)}
             position={[4,0.6,0]}
             />
+            </BoundingBox>
           </Dragables>
 
           <Dragables transformGroup>
@@ -51,6 +54,7 @@ function App() {
         </Suspense>
 
       </Dragables>
+    </Physics>
 
 
         <Controls />
