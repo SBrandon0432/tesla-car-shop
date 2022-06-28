@@ -37,14 +37,16 @@ const Box = (props) => {
   console.log( ref)
   // const ref = useRef();
   const texture = useLoader(THREE.TextureLoader, wood);
-  useFrame(state => {
-    ref.current.rotation.x += 0.01
-    ref.current.rotation.y += 0.01
-  })
+
+  // useFrame(state => {
+  //   ref.current.rotation.x += 0.01
+  //   ref.current.rotation.y += 0.01
+  // })
 
   return (
     <mesh
       ref={ref}
+      api={api}
       {...props}
       castShadow
       onPointerDown={handlePointerDown}

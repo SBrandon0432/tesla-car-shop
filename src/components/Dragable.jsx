@@ -24,6 +24,10 @@ const Dragables = (props) => {
       'hoveroff',
        e => scene.orbitControls.enabled = true
     )
+    controlsRef.current.addEventListener(
+      'drag',
+       e => e.object.api.position.copy(e.object.position)
+    )
   },[children])
 
   return (
