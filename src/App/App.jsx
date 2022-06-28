@@ -30,12 +30,14 @@ function App() {
         >
         <ambientLight intensity={1.5}/>
         <Bulb position={[0, 3, 0]}/>
-    <Physics>
+
+
+    <Physics gravity={[0,0,0]}>
 
       <Dragables>
         <Suspense fallback={null}>
           <Dragables transformGroup>
-            <BoundingBox>
+            <BoundingBox visible>
             <Model
             path={'/tesla_model_3/scene.gltf'}
             scale={new Array(3).fill(0.01)}
