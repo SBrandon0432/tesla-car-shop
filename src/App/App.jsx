@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, Suspense, lazy, useState} from "react";
 import { Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import * as THREE from 'three'
-import { Physics } from "@react-three/cannon";
+import { Physics, Debug } from "@react-three/cannon";
 import Color from '../components/Color';
 import Box from '../components/Box';
 import Background from "../components/Background";
@@ -44,18 +44,22 @@ function App() {
         <Controls />
         <axesHelper args={[5]}/>
 
-        <Physics>
-          <Dragables>
+        <Physics allowSleep={false} iterations={15} gravity={[0, -200, 0]}>
+            <Debug color="black" scale={1.1}>
+              <Dragables>
+
               <Suspense fallback={null}>
                   <Box position={[4,2,0]} />
               </Suspense>
+              </Dragables>
 
-            <Suspense fallback={null}>
+            {/* <Suspense fallback={null}>
               <Box position={[-4,2,0]}/>
-            </Suspense>
-          </Dragables>
+            </Suspense> */}
+
           <Floor position={[0,-.5,0]}/>
-        </Physics>
+          </Debug>
+        </Physics >
 
         <Suspense fallback={null}>
           <Background/>

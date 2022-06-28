@@ -1,6 +1,7 @@
 import React, {useRef} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import * as THREE from 'three';
+import { useBox } from "@react-three/cannon";
 import Color from "./Color";
 import wood from '../Assets/wood.jpg';
 
@@ -32,7 +33,9 @@ const scaleDown = object => {
 }
 
 const Box = (props) => {
-  const ref = useRef();
+  const [ref, api] = useBox(()=> ({mass: 1,...props}))
+  console.log( ref)
+  // const ref = useRef();
   const texture = useLoader(THREE.TextureLoader, wood);
   useFrame(state => {
     ref.current.rotation.x += 0.01
@@ -40,11 +43,14 @@ const Box = (props) => {
   })
 
   return (
-    <mesh ref={ref} {...props}
+    <mesh
+      ref={ref}
+      {...props}
       castShadow
       onPointerDown={handlePointerDown}
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
+
       >
       <boxBufferGeometry/>
       <meshPhysicalMaterial
