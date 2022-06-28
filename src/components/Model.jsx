@@ -13,12 +13,13 @@ const Model = props =>{
 
 
   return (
-    <Suspense>
+
       <primitive
+      castShadows
       {...props}
       object={model.scene}
       />
-    </Suspense>
+
   )
 
 }
