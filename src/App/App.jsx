@@ -27,40 +27,34 @@ function App() {
         shadows
         camera={{position:[10,10,10]}}
         >
-
         <ambientLight intensity={1.5}/>
         <Bulb position={[0, 3, 0]}/>
-
-    {/* <Physics>
 
       <Dragables>
         <Suspense fallback={null}>
           <Model
-          args={[10,10,10]}
           path={'/tesla_model_3/scene.gltf'}
+          scale={new Array(3).fill(0.01)}
+          position={[4,0.6,0]}
           />
         </Suspense>
+
+        <Suspense fallback={null}>
+          <Model
+          path={'/tesla_roadster_2020/scene.gltf'}
+          scale={new Array(3).fill(1.36)}
+          position={[-4,0.1,-1]}
+          />
+        </Suspense>
+
       </Dragables>
-    </Physics> */}
+
 
         <Controls />
         <axesHelper args={[5]}/>
 
         <Physics allowSleep={false} iterations={15} gravity={[0, -7, 0]}>
-
-              <Dragables>
-
-              <Suspense fallback={null}>
-                  <Box position={[4,2,0]} />
-              </Suspense>
-              </Dragables>
-
-            <Suspense fallback={null}>
-              <Box position={[-4,2,0]}/>
-            </Suspense>
-
           <Floor position={[0,-.5,0]}/>
-
         </Physics >
 
         <Suspense fallback={null}>

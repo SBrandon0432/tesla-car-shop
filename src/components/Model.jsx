@@ -2,6 +2,7 @@ import React, {lazy, Suspense} from 'react';
 import { useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { useBox } from '@react-three/cannon';
 
 const Model = props =>{
 
@@ -14,9 +15,8 @@ const Model = props =>{
   return (
     <Suspense>
       <primitive
+      {...props}
       object={model.scene}
-      scale={'.05'}
-      position={[0,0,0]}
       />
     </Suspense>
   )

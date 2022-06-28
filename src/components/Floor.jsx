@@ -7,7 +7,7 @@ import { useBox,usePlane } from "@react-three/cannon";
 const Floor = (props) => {
 
   const [ref, api] = useBox(()=> ({args: [20,1,10], ...props}));
-  // const [ref] = usePlane(() => ({ rotation: [-Math.PI / 1, 0, 0], ...props }))
+
   return (
     <mesh
     {...props}
