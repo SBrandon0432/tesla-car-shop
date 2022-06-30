@@ -76,7 +76,7 @@ function App() {
         <axesHelper args={[5]}/>
 
         <Physics allowSleep={false} iterations={15} gravity={[0, -7, 0]}>
-          {/* <Floor position={[0,-.5,0]}/> */}
+          <Floor position={[0,-.5,0]}/>
         </Physics >
 
         <Suspense fallback={null}>
