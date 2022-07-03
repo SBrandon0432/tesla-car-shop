@@ -7,10 +7,19 @@ import { Vector3, VectorKeyframeTrack } from 'three';
 
 
 const CameraControls = ({}) => {
-  const vec = new THREE.Vector3()
+  // const vec = new THREE.Vector3()
   useFrame(({camera, scene})=>{
-    camera.position.lerp(vec.set(...state.cameraPos), 0.1)
-  })
+    if(state.shouldUpdate) {
+      camera.position.lerp(state.cameraPos, 0.1)
+      scene.orbitControls.update();
+
+      const diff = camera.position.clone().sub(state.cameraPos).length()
+      if (diff < 0.1) {
+        state.shouldUpdate = false
+      }
+    }
+
+  },[])
   return (
     null
   )
