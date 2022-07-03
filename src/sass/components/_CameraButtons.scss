@@ -1,8 +1,9 @@
-.cameraButtons {
+.camera__Buttons {
 
   position: absolute;
   bottom: 30vh;
   z-index: 1;
+  font-size: 10rem;
 
   &--left {
     left: 40vw;

@@ -23,6 +23,7 @@ function App() {
 
   return (
     <div className='App'>
+      <CameraButtons />
       <Color handleClick={handleClick}/>
       <Canvas className="ThreeD"
         shadows
