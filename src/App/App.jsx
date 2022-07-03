@@ -9,8 +9,8 @@ import Bulb from "../components/Bulb";
 import Controls from "../components/Controls";
 import Floor from "../components/Floor";
 import Dragables from "../components/Dragable";
-import BoundingBox from "../components/BoundingBox";
-const Model = lazy(() => import("../components/Model"));
+import Cars from "../components/Cars";
+
 
 function App() {
 
@@ -30,43 +30,16 @@ function App() {
         >
         <ambientLight intensity={1.5}/>
         <Bulb position={[0, 3, 0]}/>
+        <Controls />
+        <axesHelper args={[5]}/>
+
 
 
     <Physics gravity={[0,0,0]}>
-
-      <Dragables transformGroup>
-        <Suspense fallback={null}>
-
-          <BoundingBox
-            visible
-            position={[4,1,-1]}
-            dims={[2.5,4,8]}
-            >
-            <Model
-            path={'/tesla_model_3/scene.gltf'}
-            scale={new Array(3).fill(0.01)}
-            />
-          </BoundingBox>
-
-          <BoundingBox
-            visible
-            position={[-4,1,1]}
-            dims={[2.5,4,7]}
-          >
-              <Model
-              path={'/tesla_roadster_2020/scene.gltf'}
-              scale={new Array(3).fill(1.36)}
-
-              />
-            </BoundingBox>
-        </Suspense>
-
-      </Dragables>
+         <Cars/>
     </Physics>
 
 
-        <Controls />
-        <axesHelper args={[5]}/>
 
         <Physics allowSleep={false} iterations={15} gravity={[0, -7, 0]}>
           <Floor position={[0,-.5,0]}/>
