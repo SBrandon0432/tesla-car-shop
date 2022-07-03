@@ -3,11 +3,11 @@
 
     position: absolute;
     font-size: 3.5rem;
-    bottom: 30vh;
     z-index: 1;
 
 
   &--left {
+    top: 80vh;
     left: 40vw;
     color: red;
     background-color: white;
@@ -20,6 +20,7 @@
   }
 
   &--right {
+    top: 80vh;
     left: 60vw;
     color: blue;
     background-color: white;
