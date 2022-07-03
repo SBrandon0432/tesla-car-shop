@@ -1,11 +1,16 @@
-import React, {useRef, useEffect, Suspense, lazy, useState} from "react";
-import { Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
+
+import { useFrame } from 'react-three-fiber';
+import state from '../state';
 import * as THREE from 'three'
-import { Physics, Debug } from "@react-three/cannon";
+import { Vector3, VectorKeyframeTrack } from 'three';
+
 
 
 const CameraControls = ({}) => {
-
+  const vec = new THREE.Vector3()
+  useFrame(({camera, scene})=>{
+    camera.position.lerp(vec.set(...state.cameraPos), 0.1)
+  })
   return (
     null
   )

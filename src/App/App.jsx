@@ -10,6 +10,7 @@ import Controls from "../components/Controls";
 import Floor from "../components/Floor";
 import Dragables from "../components/Dragable";
 import Cars from "../components/Cars";
+import CameraControls from "../components/CameraControls";
 
 
 function App() {
@@ -26,11 +27,12 @@ function App() {
       <Color handleClick={handleClick}/>
       <Canvas className="ThreeD"
         shadows
-        camera={{position:[10,10,10]}}
+        camera={{position:[7,7,7]}}
         >
         <ambientLight intensity={1.5}/>
         <Bulb position={[0, 3, 0]}/>
         <Controls />
+        <CameraControls/>
         <axesHelper args={[5]}/>
 
 
