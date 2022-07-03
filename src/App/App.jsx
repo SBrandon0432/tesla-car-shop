@@ -9,6 +9,7 @@ import Controls from "../components/Controls";
 import Floor from "../components/Floor";
 import Cars from "../components/Cars";
 import CameraControls from "../components/CameraControls";
+import CameraButtons from "../components/CameraButtons";
 
 
 function App() {

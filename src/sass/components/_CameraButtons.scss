@@ -2,5 +2,12 @@
 
   position: absolute;
   bottom: 30vh;
-  left: 40vw;
+  z-index: 1;
+
+  &--left {
+    left: 40vw;
+  }
+  &--right{
+    right: 40vw;
+  }
 }
