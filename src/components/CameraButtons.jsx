@@ -1,5 +1,5 @@
 import React from "react";
-
+import state from "../state";
 
 const CameraButtons = ({}) => {
 
@@ -7,12 +7,12 @@ const CameraButtons = ({}) => {
   return (
 
     <div className="camera__buttons">
-      <div className=" camera__buttons camera__buttons--left">
+      <button className=" camera__buttons camera__buttons--left">
           {'<'}
-      </div>
-      <div className=" camera__buttons camera__buttons--right">
+      </button>
+      <button className=" camera__buttons camera__buttons--right">
           {'>'}
-      </div>
+      </button>
     </div>
   )
 
