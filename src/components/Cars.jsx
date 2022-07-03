@@ -13,7 +13,7 @@ const Cars = ({}) => {
     <Suspense fallback={'lading'}>
 
     <BoundingBox
-      visible
+      // visible
       position={[4,1,-1]}
       dims={[2.5,4,8]}
       >
@@ -24,7 +24,7 @@ const Cars = ({}) => {
     </BoundingBox>
 
     <BoundingBox
-      visible
+      // visible
       position={[-4,1,1]}
       dims={[2.5,4,7]}
       >
