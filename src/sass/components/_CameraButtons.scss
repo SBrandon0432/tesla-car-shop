@@ -1,14 +1,23 @@
-.camera__Buttons {
+.camera__buttons {
 
-  position: absolute;
-  bottom: 30vh;
-  z-index: 1;
-  font-size: 10rem;
+
+   font-size: 3.5rem;
+   bottom: 30vh;
 
   &--left {
+    z-index: 1;
+    position: absolute;
+    bottom: inherit;
     left: 40vw;
+    color: red;
   }
+
   &--right{
+    z-index: 1;
+    position: absolute;
+    bottom: inherit;
     right: 40vw;
+    color: blue;
   }
+
 }

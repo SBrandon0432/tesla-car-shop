@@ -22,7 +22,7 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className='App' >
       <CameraButtons />
       <Color handleClick={handleClick}/>
       <Canvas className="ThreeD"
@@ -44,7 +44,7 @@ function App() {
 
 
         <Physics allowSleep={false} iterations={15} gravity={[0, -7, 0]}>
-          <Floor position={[0,-.5,0]}/>
+          {/* <Floor position={[0,-.5,0]}/> */}
         </Physics >
 
         <Suspense fallback={null}>
