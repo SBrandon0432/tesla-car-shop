@@ -9,7 +9,7 @@ const Bulb = (props) => {
 
   return (
     <mesh {...props}>
-      <pointLight castShadow intensity={1.5}/>
+      <pointLight castShadow intensity={1}/>
       <sphereBufferGeometry args={[0.2]}/>
       <meshPhongMaterial emissive={'red'}/>
     </mesh>

@@ -11,13 +11,19 @@ const Model = props =>{
     GLTFLoader, props.path
   )
 
+  model.scene.traverse(child => {
+    if (child.isMesh) {
+      child.castShadow = true;
+      child.receiveShadow = true;
+      child.material.side = THREE.FrontSide;
+    }
+  })
+  console.log(model.scene)
 
   return (
-
       <primitive
-      castShadows
-      scale={props.scale}
-      object={model.scene}
+        scale={props.scale}
+        object={model.scene}
       />
 
   )
