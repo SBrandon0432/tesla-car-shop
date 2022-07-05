@@ -25,12 +25,16 @@ function App() {
     <div className='App' >
       <CameraButtons />
       <Color handleClick={handleClick}/>
+
       <Canvas className="ThreeD"
         shadows
         // camera={{position:[7,7,7]}}
         >
-        <ambientLight intensity={1.5}/>
+        {/* <ambientLight intensity={1.5}/> */}
+        <Bulb position={[-6, 3, 0]}/>
         <Bulb position={[0, 3, 0]}/>
+        <Bulb position={[6, 3, 0]}/>
+
         <Controls />
         <CameraControls/>
         <axesHelper args={[5]}/>
