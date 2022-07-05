@@ -17,10 +17,12 @@ const Cars = ({}) => {
         position={[4,1,-1]}
         dims={[2.5,4,8]}
         >
-        <Model
-        path={'/tesla_model_3/scene.gltf'}
-        scale={new Array(3).fill(0.01)}
-        />
+        <Dragables>
+          <Model
+          path={'/tesla_model_3/scene.gltf'}
+          scale={new Array(3).fill(0.01)}
+          />
+        </Dragables>
       </BoundingBox>
     </Dragables>
 
