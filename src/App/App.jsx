@@ -10,15 +10,15 @@ import Floor from "../components/Floor";
 import Cars from "../components/Cars";
 import CameraControls from "../components/CameraControls";
 import CameraButtons from "../components/CameraButtons";
-
+import state from "../state";
 
 function App() {
 
 
 
   const handleClick = (e) => {
-    if (!window.activeMesh) return;
-    window.activeMesh.material.color = new THREE.Color(e.target.style.background);
+    if (!state.activeMesh) return;
+    state.activeMesh.material.color = new THREE.Color(e.target.style.background);
   }
 
   return (

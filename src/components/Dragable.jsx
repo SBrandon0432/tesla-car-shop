@@ -26,7 +26,10 @@ const Dragables = (props) => {
     )
     controlsRef.current.addEventListener(
       'dragstart',
-      e => e.object.api?.mass.set(0)
+      e => {
+        e.object.api?.mass.set(0);
+      }
+
     )
     controlsRef.current.addEventListener(
       'dragend',

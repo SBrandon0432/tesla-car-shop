@@ -1,8 +1,9 @@
 import * as THREE from 'three'
-
-
+// modle three Capot001_CAR_PAINT_0
+// srpt TRDEF-Body_car_main_paint_0
 const state = {
-  activeMesh: null,
+  activeMesh: {},
+  activeMeshName: 'Capot001_CAR_PAINT_0',
   cameraPos: new THREE.Vector3(7,7,7),
   target: new THREE.Vector3(4,0,0),
   shouldUpdate: true
