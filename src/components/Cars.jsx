@@ -13,16 +13,13 @@ const Cars = ({}) => {
 
     <Dragables transformGroup>
       <BoundingBox
-        visible
-        position={[4,1,-1]}
+        position={[4,0.57,1]}
         dims={[2.5,4,8]}
         >
-        <Dragables>
           <Model
           path={'/tesla_model_3/scene.gltf'}
           scale={new Array(3).fill(0.01)}
           />
-        </Dragables>
       </BoundingBox>
     </Dragables>
 
