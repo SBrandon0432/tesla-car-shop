@@ -23,8 +23,10 @@ function App() {
 
   return (
     <div className='App' >
-      <CameraButtons />
-      <Color handleClick={handleClick}/>
+      <div className="controls">
+        <CameraButtons />
+        <Color handleClick={handleClick}/>
+      </div>
 
       <Canvas className="ThreeD"
         shadows
@@ -34,8 +36,10 @@ function App() {
         <Bulb position={[0, 7, 0]}/>
         <Bulb position={[6, 3, 0]}/>
 
-        <Controls />
-        <CameraControls/>
+
+          <Controls />
+          <CameraControls/>
+
         <axesHelper args={[5]}/>
 
         <Physics gravity={[0,0,0]}>
