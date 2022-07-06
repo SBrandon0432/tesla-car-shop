@@ -23,10 +23,8 @@ const Cars = ({}) => {
       </BoundingBox>
     </Dragables>
 
-    <Dragables transformGroup>
       <BoundingBox
-        visible
-        position={[-4,1,1]}
+        position={[-4,0,1]}
         dims={[2.5,4,7]}
         >
           <Dragables>
@@ -36,7 +34,7 @@ const Cars = ({}) => {
             />
           </Dragables>
       </BoundingBox>
-    </Dragables>
+
     </Suspense>
 
   );
