@@ -6,15 +6,17 @@ import * as THREE from 'three';
 
 
 const Bulb = (props) => {
+
   const ref = useRef();
   const {scene} = useThree();
-  useEffect((props)=> {
+
+  useEffect(()=> {
     if (scene.lights) {
       scene.lights.push(ref)
     } else {
       scene.lights = [ref]
     }
-  },[])
+  })
 
   return (
     <mesh {...props} ref={ref}>
@@ -24,6 +26,8 @@ const Bulb = (props) => {
         shadow-mapSize-height = {2**10}
         shadow-mapSize-width = {2**10}
         shadow-radius = {10}
+        transparent
+        opacity={1}
         />
       <sphereBufferGeometry args={[0.2,20,20]} />
       <meshPhongMaterial />
