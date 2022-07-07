@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import * as THREE from 'three';
 
@@ -6,9 +6,18 @@ import * as THREE from 'three';
 
 
 const Bulb = (props) => {
+  const ref = useRef();
+  const {scene} = useThree();
+  useEffect((props)=> {
+    if (scene.lights) {
+      scene.lights.push(ref)
+    } else {
+      scene.lights = [ref]
+    }
+  },[])
 
   return (
-    <mesh {...props}>
+    <mesh {...props} ref={ref}>
       <pointLight
         castShadow
         intensity={1}
