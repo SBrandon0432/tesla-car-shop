@@ -12,6 +12,7 @@ import CameraControls from "../components/CameraControls";
 import CameraButtons from "../components/CameraButtons";
 import state from "../state";
 import Lights from "../components/Lights";
+import Effects from "../components/Effects";
 
 function App() {
 
@@ -43,12 +44,7 @@ function App() {
           <Background/>
         </Suspense>
 
-
-        <EffectComposer>
-          <DepthOfField focusDistance={0} focalLength={0.12} bokehScale={2} height={480} />
-          <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={300} />
-          <Vignette eskil={false} offset={0.1} darkness={1.1} />
-        </EffectComposer>
+        <Effects/>
       </Canvas>
     </div>
   );
