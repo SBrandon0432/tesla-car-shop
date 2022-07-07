@@ -4,7 +4,7 @@ import * as THREE from 'three'
 const state = {
   activeMesh: {},
   activeMeshName: 'Capot001_CAR_PAINT_0',
-  cameraPos: new THREE.Vector3(7,5,5),
+  cameraPos: new THREE.Vector3(7,1.6,4),
   target: new THREE.Vector3(4,0,0),
   shouldUpdate: true
 }

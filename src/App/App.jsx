@@ -2,6 +2,7 @@ import React, {useRef, useEffect, Suspense, lazy, useState} from "react";
 import { Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
 import * as THREE from 'three'
 import { Physics, Debug } from "@react-three/cannon";
+import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
 import Color from '../components/Color';
 import Background from "../components/Background";
 import Controls from "../components/Controls";
@@ -34,7 +35,7 @@ function App() {
             <Cars/>
         </Physics>
 
-        <Physics allowSleep={false} iterations={15} gravity={[0, -7, 0]}>
+        <Physics iterations={15} gravity={[0, -7, 0]}>
           <Floor position={[0,-.5,0]}/>
         </Physics >
 
@@ -43,6 +44,11 @@ function App() {
         </Suspense>
 
 
+        <EffectComposer>
+          <DepthOfField focusDistance={0} focalLength={0.12} bokehScale={2} height={480} />
+          <Bloom luminanceThreshold={0} luminanceSmoothing={1} height={300} />
+          <Vignette eskil={false} offset={0.1} darkness={1.1} />
+        </EffectComposer>
       </Canvas>
     </div>
   );

@@ -15,10 +15,9 @@ const Bulb = (props) => {
         shadow-mapSize-height = {2**10}
         shadow-mapSize-width = {2**10}
         shadow-radius = {10}
-
         />
-      <sphereBufferGeometry args={[0.2,20,20]}/>
-      <meshPhongMaterial emissive={'red'}/>
+      <sphereBufferGeometry args={[0.2,20,20]} />
+      <meshPhongMaterial />
     </mesh>
   )
 }

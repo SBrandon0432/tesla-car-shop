@@ -23,7 +23,7 @@ const CameraControls = ({}) => {
         state.shouldUpdate = false
       }
     }
-
+    // console.log(camera.position)
   },[])
   return (
     null
