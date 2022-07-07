@@ -26,6 +26,12 @@ function App() {
 
       <Canvas className="ThreeD"
         shadows
+        gl = {{
+            powerPreference: "high-performance",
+            antialias: false,
+            stencil: false,
+            depth: false
+          }}
         >
           <Lights/>
           <Controls />
