@@ -8,14 +8,14 @@ const CameraButtons = ({}) => {
   const sets = {
     //model 3
     1: {
-      cameraPos: [7,7,7],
-      target: [4,0,0],
+      cameraPos: [7,3,5],
+      target: [3,0,0],
       name: 'Capot001_CAR_PAINT_0'
     },
     //sport
     2: {
-      cameraPos: [-3,7,7],
-      target: [-4,0,0],
+      cameraPos: [-1,3,7],
+      target: [-8,0,0],
       name: 'TRDEF-Body_car_main_paint_0'
     }
   }
