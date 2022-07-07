@@ -11,7 +11,8 @@ import Cars from "../components/Cars";
 import CameraControls from "../components/CameraControls";
 import CameraButtons from "../components/CameraButtons";
 import state from "../state";
-
+import Lights from "../components/Lights";
+import { Light } from "three";
 function App() {
 
 
@@ -31,20 +32,7 @@ function App() {
       <Canvas className="ThreeD"
         shadows
         >
-        <ambientLight intensity={.2}/>
-        <directionalLight
-          position={[6,3,0]}
-          intensity={2}
-          castShadow
-          shadow-mapSize-height={2**10}
-          shadow-mapSize-width={2**10}
-
-          />
-        <Bulb position={[-6, 3, 0]}/>
-        <Bulb position={[0, 7, 0]}/>
-        <Bulb position={[6, 3, 0]}/>
-
-
+          <Lights/>
           <Controls />
           <CameraControls/>
 

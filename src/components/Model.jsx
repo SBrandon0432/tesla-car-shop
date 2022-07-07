@@ -18,7 +18,6 @@ const Model = props =>{
       child.material.side = THREE.FrontSide;
     }
   })
-  console.log(model.scene)
 
   return (
       <primitive
