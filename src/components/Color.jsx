@@ -1,9 +1,15 @@
 import React from "react";
 import * as THREE from 'three'
+import state from "../state";
 
 const Color = (props) => {
 
-  const {handleClick} = props
+  // const {handleClick} = props
+
+  const handleClick = (e) => {
+    if (!state.activeMesh) return;
+    state.activeMesh.material.color = new THREE.Color(e.target.style.background);
+  }
 
   return (
     <div className="color">
