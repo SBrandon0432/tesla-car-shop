@@ -17,7 +17,7 @@ const Effects = () => {
       lights ?
       <EffectComposer>
         <DepthOfField focusDistance={0} focalLength={0.12} bokehScale={2} height={480} />
-        {
+        {/* {
           lights.map((light, index)=> {
             return (
               <GodRays
@@ -27,7 +27,7 @@ const Effects = () => {
               />
             )
           })
-        }
+        } */}
     </EffectComposer>
     :
         null
