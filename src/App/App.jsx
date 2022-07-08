@@ -36,7 +36,7 @@ function App() {
           <Lights/>
           <Controls />
           <CameraControls/>
-        <axesHelper args={[5]}/>
+        {/* <axesHelper args={[5]}/> */}
 
         <Physics gravity={[0,0,0]}>
             <Cars/>
