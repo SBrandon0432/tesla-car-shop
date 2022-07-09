@@ -39,7 +39,6 @@ const Cars = ({}) => {
 
       <BoundingBox
         position={[7.6,1.4,1.2]}
-        visible
       >
         <group rotation={[0, 260.6, 0]}>
           <Model
