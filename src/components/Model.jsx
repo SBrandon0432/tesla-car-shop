@@ -10,7 +10,7 @@ const Model = props =>{
   const model = useLoader(
     GLTFLoader, props.path
   )
-    console.log(props.path, model)
+    // console.log(props.path, model)
 
     let mixer;
     if (model.animations.length > 0) {
