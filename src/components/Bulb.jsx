@@ -26,10 +26,9 @@ const Bulb = (props) => {
         shadow-mapSize-height = {2**10}
         shadow-mapSize-width = {2**10}
         shadow-radius = {10}
-        transparent
-        opacity={1}
+
         />
-      <sphereBufferGeometry args={[0.2,20,20]} />
+      <sphereBufferGeometry args={[0,0,0]} />
       <meshPhongMaterial />
     </mesh>
   )
