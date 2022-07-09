@@ -35,6 +35,21 @@ const Cars = ({}) => {
           </Dragables>
       </BoundingBox>
 
+    {/* <Dragables transformGroup> */}
+
+      <BoundingBox
+        position={[7.6,1.4,1.2]}
+        visible
+      >
+        <group rotation={[0, 260.6, 0]}>
+          <Model
+            path={'/mech_drone/scene.gltf'}
+            scale={new Array(3).fill(1.36)}
+            />
+          </group>
+       </BoundingBox>
+    {/* </Dragables> */}
+
     </Suspense>
 
   );
