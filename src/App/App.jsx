@@ -10,7 +10,6 @@ import Floor from "../components/Floor";
 import Cars from "../components/Cars";
 import CameraControls from "../components/CameraControls";
 import CameraButtons from "../components/CameraButtons";
-import state from "../state";
 import Lights from "../components/Lights";
 import Effects from "../components/Effects";
 

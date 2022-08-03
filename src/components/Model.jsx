@@ -10,7 +10,6 @@ const Model = props =>{
   const model = useLoader(
     GLTFLoader, props.path
   )
-    // console.log(props.path, model)
 
     let mixer;
     if (model.animations.length > 0) {
@@ -38,6 +37,7 @@ const Model = props =>{
       <primitive
         scale={props.scale}
         object={model.scene}
+
       />
 
   )
