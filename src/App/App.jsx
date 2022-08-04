@@ -16,6 +16,7 @@ import Effects from "../components/Effects";
 function App() {
 
 
+
   return (
     <div className='App' >
       <div className="controls">
