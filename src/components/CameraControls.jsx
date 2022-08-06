@@ -1,5 +1,5 @@
 
-import { useFrame } from 'react-three-fiber';
+import { useFrame } from '@react-three/fiber';
 import state from '../state';
 import * as THREE from 'three'
 import { Vector3, VectorKeyframeTrack } from 'three';

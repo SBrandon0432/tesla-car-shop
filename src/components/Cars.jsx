@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import { Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
+import { Canvas, useFrame, extend, useThree, useLoader } from '@react-three/fiber';
 import * as THREE from 'three'
 import BoundingBox from "./BoundingBox";
 import Dragables from "./Dragable";

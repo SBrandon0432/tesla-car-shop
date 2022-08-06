@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { EffectComposer, DepthOfField, Bloom, Vignette, GodRays } from '@react-three/postprocessing'
-import { useThree } from "react-three-fiber";
+import { useThree } from "@react-three/fiber";
 
 
 const Effects = () => {

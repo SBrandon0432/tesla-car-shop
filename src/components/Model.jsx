@@ -21,9 +21,9 @@ const Model = props =>{
 
     }
 
-    useFrame((scene, delta)=> {
-      mixer?.update(delta)
-    });
+    // useFrame((scene, delta)=> {
+    //   mixer?.update(delta)
+    // });
 
   model.scene.traverse(child => {
     if (child.isMesh) {

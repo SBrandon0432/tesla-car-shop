@@ -1,6 +1,6 @@
 import React, {useRef, useEffect, useState} from "react";
 import {DragControls} from 'three/examples/jsm/controls/DragControls';
-import {extend, useThree} from 'react-three-fiber';
+import {extend, useThree} from '@react-three/fiber';
 extend({DragControls})
 
 
