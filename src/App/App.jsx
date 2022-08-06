@@ -48,6 +48,7 @@ function App() {
 
         <Suspense fallback={null}>
           <Background/>
+
         </Suspense>
 
         <Effects/>
