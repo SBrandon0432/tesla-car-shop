@@ -1,5 +1,5 @@
 import React, {useRef, useEffect, Suspense, lazy, useState} from "react";
-import { Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
+import { Canvas, useFrame, extend, useThree, useLoader } from '@react-three/fiber';
 import * as THREE from 'three'
 import { Physics, Debug } from "@react-three/cannon";
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
@@ -10,11 +10,11 @@ import Floor from "../components/Floor";
 import Cars from "../components/Cars";
 import CameraControls from "../components/CameraControls";
 import CameraButtons from "../components/CameraButtons";
-import state from "../state";
 import Lights from "../components/Lights";
 import Effects from "../components/Effects";
 
 function App() {
+
 
 
   return (

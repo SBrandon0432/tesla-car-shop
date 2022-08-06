@@ -1,5 +1,5 @@
 import React, {useRef, useMemo} from "react";
-import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from 'react-three-fiber';
+import { ReactThreeFiber, Canvas, useFrame, extend, useThree, useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import shop from '../Assets/autoshop.jpg';
 
